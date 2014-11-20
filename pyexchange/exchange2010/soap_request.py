@@ -117,8 +117,8 @@ def get_item(exchange_id, format=u"Default"):
 
 
 def get_calendar_items(format=u"Default", start=None, end=None, max_entries=999999, delegate_for=None):
-  start = start.strftime(EXCHANGE_DATE_FORMAT)
-  end = end.strftime(EXCHANGE_DATE_FORMAT)
+  start = start.strftime(EXCHANGE_DATETIME_FORMAT)
+  end = end.strftime(EXCHANGE_DATETIME_FORMAT)
   if delegate_for is None:
     target = M.ParentFolderIds(T.DistinguishedFolderId(Id=u"calendar"))
   else:
@@ -610,8 +610,8 @@ def update_item(event, updated_attributes, calendar_item_update_operation_type):
 
       recurrence_node.append(
         T.EndDateRecurrence(
-          T.StartDate(event.start.strftime(EXCHANGE_DATETIME_FORMAT)),
-          T.EndDate(event.recurrence_end_date.strftime(EXCHANGE_DATETIME_FORMAT)),
+          T.StartDate(event.start.strftime(EXCHANGE_DATE_FORMAT)),
+          T.EndDate(event.recurrence_end_date.strftime(EXCHANGE_DATE_FORMAT)),
         )
       )
 

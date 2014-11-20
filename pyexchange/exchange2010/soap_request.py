@@ -610,8 +610,8 @@ def update_item(event, updated_attributes, calendar_item_update_operation_type):
 
       recurrence_node.append(
         T.EndDateRecurrence(
-          T.StartDate(event.start.strftime(EXCHANGE_DATE_FORMAT)),
-          T.EndDate(event.recurrence_end_date.strftime(EXCHANGE_DATE_FORMAT)),
+          T.StartDate(event.start.strftime(EXCHANGE_DATETIME_FORMAT)),
+          T.EndDate(event.recurrence_end_date.strftime(EXCHANGE_DATETIME_FORMAT)),
         )
       )
 
